@@ -1,3 +1,4 @@
+import { Londrina_Solid } from "next/font/google";
 import "~/styles/globals.css";
 
 export const metadata = {
@@ -6,6 +7,11 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const inter = Londrina_Solid({
+  weight: ["300", "400", "900"],
+  subsets: ["latin"],
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -13,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
